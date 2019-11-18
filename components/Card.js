@@ -1,11 +1,11 @@
 import React from 'react';
-import { View, StyleCheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 
 const Card = props => {
 return <View style={{...styles.card, ...props.style}}>{props.children}</View>
 };
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create ({
     card: {
         /*for IOS */
         shadowColor: 'black',
