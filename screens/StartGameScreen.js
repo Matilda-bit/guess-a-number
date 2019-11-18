@@ -33,7 +33,18 @@ const styles= StyleSheet.create ({
    inputContainer: {
         width: 300,
         maxWidth: '80%',
-        alignItems: 'center'
+        alignItems: 'center',
+        shadowColor: 'black',
+        /*for IOS */
+        shadowOffset: { width: 0, height: 2 },
+        shadowRadius: 6,
+        shadowOpacity: 0.26,
+        /*for android */
+        elevation: 5,
+        backgroundColor: 'white',
+        padding: 20,
+        borderRadius: 10
+
    },
    title: {
        fontSize: 20,
