@@ -51,14 +51,18 @@ const StartGameScreen = props => {
         <Card style={styles.summaryContainer}>
             <Text>You Selected:</Text>
             <NumberContainer>{selectedNumber}</NumberContainer>
-            <Button title="START GAME" />
+            <Button 
+                title="START GAME"
+                onPress={() => props.onStartGame(selectedNumber)}
+            />
         </Card>
         );
     }
 
     return (
-        <TouchableWithoutFeedback onPress={() => {
-            Keyboard.dismiss();
+        <TouchableWithoutFeedback 
+            onPress={() => {
+                Keyboard.dismiss();
         }}>
             <View style={styles.screen}>
                 <Text style={styles.title}>Start New Game!</Text>
@@ -69,7 +73,7 @@ const StartGameScreen = props => {
                         blurOnSubmit 
                         autoCapitalize='none' 
                         autoCorrect = {false} 
-                        keyboardType = "numeric" 
+                        keyboardType = "numeber-pad" 
                         maxLength={2} 
                         onChangeText={numberInputHandler}
                         value={enteredValue}
