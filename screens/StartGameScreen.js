@@ -11,6 +11,7 @@ import {
 import Card from '../components/Card';
 import Input from '../components/Input';
 import Colors from '../constants/colors';
+import NumberContainer from '../components/NumberContainer';
 
 
 const StartGameScreen = props => {
@@ -21,31 +22,39 @@ const StartGameScreen = props => {
             setEnteredValue(inputText.replace(/[^0-9]/g, ''));
 
     };
-    const confirmInputHandler = () => {
-        const chosenNumber = parseInt(enteredValue);
-        if(isNaN(chosenNumber) || chosenNumber <=0 || chosenNumber > 99){
-            Alert.alert(
-                'Invalid number',
-                'Number has to be a number between 1 and 99.',
-                 [{text: 'Okay', style: 'destructive', onPress: resetInputHandler}]
-                 );
-            return;
-        }
-        setConfirmed(true);
-        setSelectedNumber(chosenNumber);
-        setEnteredValue('');
-        
-    };
-
+    
     const resetInputHandler = () => {
         setEnteredValue('');
         setConfirmed(false);
     };
 
+    const confirmInputHandler = () => {
+            const chosenNumber = parseInt(enteredValue);
+            if(isNaN(chosenNumber) || chosenNumber <=0 || chosenNumber > 99){
+                Alert.alert(
+                    'Invalid number',
+                    'Number has to be a number between 1 and 99.',
+                    [{text: 'Okay', style: 'destructive', onPress: resetInputHandler}]
+                    );
+                return;
+            }
+            setConfirmed(true);
+            setSelectedNumber(chosenNumber);
+            setEnteredValue('');
+            Keyboard.dismiss('');
+            
+        };
+
     let confirmedOutput;
     if (confirmed) {
-    confirmedOutput = <Text>chosen Number: {selectedNumber}</Text>;
-    };
+    confirmedOutput = (
+        <Card style={styles.summaryContainer}>
+            <Text>You Selected:</Text>
+            <NumberContainer>{selectedNumber}</NumberContainer>
+            <Button title="START GAME" />
+        </Card>
+        );
+    }
 
     return (
         <TouchableWithoutFeedback onPress={() => {
@@ -115,6 +124,10 @@ const styles= StyleSheet.create ({
        width: 50,
        textAlign: "center"
 
+   },
+   summaryContainer: {
+       marginTop: 20,
+       alignItems:'center'
    }
 });
 
