@@ -1,20 +1,46 @@
-import React from 'react';
-import { View, Text, StyleSheet, Button } from 'react-native';
+import React, { useState } from 'react';
+import { 
+    View, 
+    Text, 
+    StyleSheet, 
+    Button, 
+    TouchableWithoutFeedback 
+} from 'react-native';
 import Card from '../components/Card';
 import Input from '../components/Input';
 import Colors from '../constants/colors';
 
 
 const StartGameScreen = props => {
+        const [enteredValue, setEnteredValue] = useState('');
+
+        const numberInputHandler = inputText => {
+            setEnteredValue(inputText.replace(/[^0-9]/g, ''));
+
+        };
+
     return (
         <View style={styles.screen}>
             <Text style={styles.title}>Start New Game!</Text>
             <Card style={styles.inputContainer}>
                 <Text>Select a Number</Text>
-                <Input />
+                <Input 
+                    style = {styles.input} 
+                    blurOnSubmit 
+                    autoCapitalize='none' 
+                    autoCorrect = {false} 
+                    keyboardType = "numeric" 
+                    maxLength={2} 
+                    onChangeText={numberInputHandler}
+                    value={enteredValue}
+                />
                 <View style={styles.buttonContainer}>
-                    <View style={styles.button}><Button title="Reset"  onPress={() => {}} color={Colors.accent} /></View> 
-                    <View style={styles.button}><Button title="Confirm" onPress={() => {}} color={Colors.primary}/></View>
+                    <View style={styles.button}>
+                        <Button title="Reset"  onPress={() => {}} color={Colors.accent} />
+                    </View> 
+                    <View style={styles.button}>
+                        <Button title="Confirm" onPress={() => {}} color={Colors.primary}/>
+                    </View>
                 </View>
             </Card>
         </View>
@@ -45,6 +71,11 @@ const styles= StyleSheet.create ({
    title: {
        fontSize: 20,
        marginVertical: 10
+   },
+   input: {
+       width: 50,
+       textAlign: "center"
+
    }
 });
 
