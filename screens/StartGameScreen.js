@@ -73,7 +73,7 @@ const StartGameScreen = props => {
                         blurOnSubmit 
                         autoCapitalize='none' 
                         autoCorrect = {false} 
-                        keyboardType = "numeber-pad" 
+                        keyboardType = "number-pad" 
                         maxLength={2} 
                         onChangeText={numberInputHandler}
                         value={enteredValue}
