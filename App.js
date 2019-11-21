@@ -46,13 +46,14 @@ export default function App() {
     setGuessRounds(numOfRounds);
   };
   let content = <StartGameScreen onStartGame={startGameHandler} />;
-  content = (
-    <GameOverScreen 
-      roundsNumber={quessRounds} 
-      userNumber ={userNumber} 
-      onRestart={configureNewGameHandler} 
-    />
-  );
+  // flex only GameOverScreen
+  // content = (
+  //   <GameOverScreen 
+  //     roundsNumber={quessRounds} 
+  //     userNumber ={userNumber} 
+  //     onRestart={configureNewGameHandler} 
+  //   />
+  // );
   if (userNumber && quessRounds <= 0) {
     content = (
       <GameScreen userChoice={userNumber} onGameOver={gameOverHandler} />

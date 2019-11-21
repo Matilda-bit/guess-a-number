@@ -72,11 +72,13 @@ const styles=StyleSheet.create({
         fontFamily: 'open-sans-lato'
     },
     resultContainer:{
-        marginHorizontal: 70
+        marginHorizontal: 70,
+        marginVertical: 18
 
     },
     resultText: {
-        textAlign:'center'
+        textAlign:'center',
+        fontSize: 20
     }
 });
 
