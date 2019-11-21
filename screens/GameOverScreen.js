@@ -10,7 +10,9 @@ const GameOverScreen = props => {
             <TitleText>The Game is Over!</TitleText>
             <View style={styles.imageContainer}>
             <Image 
-                source={require('../assets/success.jpg')} 
+                fadeDuration={1000}
+                // source={require('../assets/success.jpg')}
+                source={{uri: 'https://static.vecteezy.com/system/resources/previews/000/271/578/non_2x/business-success-businessman-showing-the-top-of-the-chart-and-screaming-with-joy-retro-style-pop-art-vector-illustration-white-adult-male-caucasian.jpg'}} 
                 style={styles.image}
                 resizeMode="cover"
             />
