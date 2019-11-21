@@ -10,7 +10,6 @@ import GameOverScreen from './screens/GameOverScreen';
 
 const fetchFonts = () => {
   return Font.loadAsync({
-    'open-sans': require('./assets/fonts/FFF_Tusj.ttf'),
     'open-sans-bold': require('./assets/fonts/Amatic-Bold.ttf'),
     'open-sans-lato' : require('./assets/fonts/Lato-Black.ttf'),
   });
@@ -49,8 +48,8 @@ export default function App() {
   let content = <StartGameScreen onStartGame={startGameHandler} />;
   content = (
     <GameOverScreen 
-      roundsNumber={1} 
-      userNumber ={1} 
+      roundsNumber={quessRounds} 
+      userNumber ={userNumber} 
       onRestart={configureNewGameHandler} 
     />
   );

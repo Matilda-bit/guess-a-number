@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, Button, Image } from 'react-native';
+import { View, StyleSheet, Text, Button, Image } from 'react-native';
 
 import BodyText from '../components/BodyText';
 import TitleText from '../components/TitleText';
@@ -10,7 +10,8 @@ const GameOverScreen = props => {
             <TitleText>The Game is Over!</TitleText>
             <Image 
                 source={require('../assets/success.jpg')} 
-                style={styles.image} 
+                style={styles.image}
+                resizeMode="cover"
             />
             <BodyText>Number of rounds: {props.roundsNumber}</BodyText>
             <BodyText>Number was: {props.userNumber}</BodyText>
