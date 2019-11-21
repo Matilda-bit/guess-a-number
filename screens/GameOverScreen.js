@@ -1,8 +1,15 @@
 import React from 'react';
-import { View, StyleSheet, Text, Button, Image } from 'react-native';
+import { 
+        View, 
+        StyleSheet, 
+        Text, 
+        Button, 
+        Image 
+    } from 'react-native';
 
 import BodyText from '../components/BodyText';
 import TitleText from '../components/TitleText';
+import Colors from '../constants/colors';
 
 const GameOverScreen = props => {
     return (
@@ -11,18 +18,27 @@ const GameOverScreen = props => {
             <View style={styles.imageContainer}>
             <Image 
                 fadeDuration={1000}
-                // source={require('../assets/success.jpg')}
-                source={{uri: 'https://static.vecteezy.com/system/resources/previews/000/271/578/non_2x/business-success-businessman-showing-the-top-of-the-chart-and-screaming-with-joy-retro-style-pop-art-vector-illustration-white-adult-male-caucasian.jpg'}} 
+                source={require('../assets/success.jpg')}
+                // source={{
+                //     uri: 
+                //         'https://static.vecteezy.com/system/resources/previews/000/271/578/non_2x/business-success-businessman-showing-the-top-of-the-chart-and-screaming-with-joy-retro-style-pop-art-vector-illustration-white-adult-male-caucasian.jpg'}} 
                 style={styles.image}
                 resizeMode="cover"
             />
             </View>
-            
-            <BodyText>Number of rounds: {props.roundsNumber}</BodyText>
-            <BodyText>Number was: {props.userNumber}</BodyText>
+            <View style={styles.resultContainer}>
+            <BodyText style={styles.resultText}>
+                Your phone needed{' '} 
+                <Text style={styles.highlight}>{props.roundsNumber}</Text> 
+                {' '}round to guess the number{' '} 
+                <Text style={styles.highlight}>{props.userNumber}</Text>
+            </BodyText>
+            </View>
             <View style={styles.botton}>
                 <Button title="NEW GAME" onPress={props.onRestart} />  
+            
             </View>
+            
             
         </View>
     );
@@ -50,6 +66,17 @@ const styles=StyleSheet.create({
     },
     botton: {
         marginVertical: 20
+    },
+    highlight : {
+        color: Colors.primary,
+        fontFamily: 'open-sans-lato'
+    },
+    resultContainer:{
+        marginHorizontal: 70
+
+    },
+    resultText: {
+        textAlign:'center'
     }
 });
 

@@ -11,7 +11,7 @@ import GameOverScreen from './screens/GameOverScreen';
 const fetchFonts = () => {
   return Font.loadAsync({
     'open-sans-bold': require('./assets/fonts/Amatic-Bold.ttf'),
-    'open-sans-lato' : require('./assets/fonts/Lato-Black.ttf'),
+    'open-sans-lato' : require('./assets/fonts/ChunkFive-Regular.ttf'),
   });
 };
 
