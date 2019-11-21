@@ -16,14 +16,14 @@ const styles = StyleSheet.create({
     header: {
         width: '100%',
         height: 100,
-        paddingTop: 15,
+        paddingTop: 35,
         backgroundColor: Colors.primary,
         alignItems: 'center',
         justifyContent: 'center'       
     },
     title: {
         color: 'white',
-        fontSize: 30
+        fontSize: 35,
       }
 });
 
