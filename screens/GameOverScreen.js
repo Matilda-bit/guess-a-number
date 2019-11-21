@@ -18,7 +18,10 @@ const GameOverScreen = props => {
             
             <BodyText>Number of rounds: {props.roundsNumber}</BodyText>
             <BodyText>Number was: {props.userNumber}</BodyText>
-            <Button title="NEW GAME" onPress={props.onRestart}/>
+            <View style={styles.botton}>
+                <Button title="NEW GAME" onPress={props.onRestart} />  
+            </View>
+            
         </View>
     );
 };
@@ -42,6 +45,9 @@ const styles=StyleSheet.create({
         overflow: 'hidden',
         marginVertical: 30
 
+    },
+    botton: {
+        marginVertical: 20
     }
 });
 
