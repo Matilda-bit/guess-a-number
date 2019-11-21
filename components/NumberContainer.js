@@ -18,13 +18,14 @@ const styles = StyleSheet.create({
         borderColor: Colors.accent,
         paddingTop: 5,
         borderRadius: 10,
-        marginVertical: 10,
+        marginVertical: 18,
         alignItems: 'center'
     },
     number: {
         color: Colors.accent,
         fontSize: 22,
         paddingBottom: 5
+        
     }
 });
 
