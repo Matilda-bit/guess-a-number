@@ -69,7 +69,7 @@ export default function App() {
 
   return (
     <View style={styles.screen}>
-      <Header title="Guess a Number" />
+      <Header/>
       {content}
     </View>
   );
@@ -79,4 +79,5 @@ const styles = StyleSheet.create({
   screen: {
     flex: 1
   }
+  
 });

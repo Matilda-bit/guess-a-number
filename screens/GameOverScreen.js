@@ -60,7 +60,8 @@ const styles=StyleSheet.create({
         borderWidth: 3,
         borderColor: 'black',
         overflow: 'hidden',
-        marginVertical: 30
+        marginBottom: 16,
+        marginTop: 8
 
     },
     botton: {
@@ -72,12 +73,12 @@ const styles=StyleSheet.create({
     },
     resultContainer:{
         marginHorizontal: 70,
-        marginVertical: 18
+        marginVertical: 14
 
     },
     resultText: {
         textAlign:'center',
-        fontSize: 20
+        
     }
 });
 

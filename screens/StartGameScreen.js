@@ -122,10 +122,10 @@ const styles= StyleSheet.create ({
         width: 300,
         maxWidth: '80%',
         alignItems: 'center',
+        marginVertical: 10
    },
    title: {
-       marginVertical: 10,
-       fontSize: 50
+       marginBottom: 10,
    },
    input: {
        width: 50,

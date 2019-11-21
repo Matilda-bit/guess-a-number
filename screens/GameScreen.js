@@ -5,7 +5,7 @@ import { Ionicons } from '@expo/vector-icons'
 import MainButton from '../components/MainButton';
 import NumberContainer from '../components/NumberContainer';
 import Card from '../components/Card';
-import DefaultStyles from '../constants/default-styles';
+// import DefaultStyles from '../constants/default-styles';
 import BodyText from '../components/BodyText';
 
 
@@ -68,7 +68,7 @@ const GameScreen = props => {
 
     return(
         <View style={styles.screen}>
-            <Text style={DefaultStyles.bodyText}>Opponent's Cuess</Text>
+            <BodyText>Opponent's Guess</BodyText>
             <NumberContainer>{ currentGuess }</NumberContainer>
             <Card style={styles.buttonContainer}>
                 
@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-around',
         marginTop: 20,
-        width: 400,
+        width: 320,
         maxWidth: '90%'
     },
     list: {
