@@ -73,7 +73,7 @@ export default function App() {
       {content}
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   screen: {
